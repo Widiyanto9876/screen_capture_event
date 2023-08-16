@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:flutter/services.dart';
 
@@ -10,7 +9,7 @@ class ScreenCaptureEvent {
   static const MethodChannel _channel = MethodChannel('screencapture_method');
 
   ScreenCaptureEvent([bool requestPermission = true]) {
-    if (requestPermission && Platform.isAndroid) storagePermission();
+    // if (requestPermission && Platform.isAndroid) storagePermission();
     _channel.setMethodCallHandler((call) async {
       switch (call.method) {
         case "screenshot":
